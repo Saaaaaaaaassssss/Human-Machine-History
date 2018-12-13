@@ -19,10 +19,11 @@ body .global-container {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            transition: 0.4s ease-in-out;
 
             .round {
                 text-align: center;
-                will-change: transform;
+                will-change: opacity transform;
                 position: absolute;
                 width: 25%;
                 height: 50%;
@@ -52,7 +53,7 @@ body .global-container {
             .template-picture {
                 width: 65%;
                 height: 65%;
-                will-change: transform;
+                will-change: opacity transform;
                 transform: translateY(47.5%) translateX(-20%);
             }
 

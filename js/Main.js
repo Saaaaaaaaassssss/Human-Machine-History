@@ -3,16 +3,14 @@ export default class Main {
         this.bigContainer = document.querySelector('.global-container')
         this.littleContainer = document.querySelector('.little-container')
 
-        const loop = () => {
-            window.requestAnimationFrame(loop)
-
-        }
-        loop()
+        this.zoom()
     }
 
     zoom() {
-        this.bigContainer.addEventListener('click', () => {
+        this.littleContainer.addEventListener('click', () => {
             this.littleContainer.style.transform = 'scale(20)'
+            this.littleContainer.style.opacity = '0'
+            console.log('oui')
 
             window.setTimeout(() => {
                 this.bigContainer.removeChild(this.littleContainer)
@@ -20,6 +18,7 @@ export default class Main {
                 window.setTimeout(() => {
                     this.bigContainer.appendChild(this.littleContainer)
                     this.littleContainer.style.transform = 'scale(1)'
+                    this.littleContainer.style.opacity = '1'
                 }, 1000)
             }, 1000)
         })
