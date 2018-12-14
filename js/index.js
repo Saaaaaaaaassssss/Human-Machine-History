@@ -1,5 +1,3 @@
-//import Main from './Main.js'
-import InPageContainer from './InPageContainer.js'
+import Main from './Main.js'
 
-//const main = new Main()
-const inPageContainer = new InPageContainer()
+const main = new Main()

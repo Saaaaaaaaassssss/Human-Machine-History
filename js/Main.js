@@ -1,26 +1,23 @@
+import InPageContainer from './InPageContainer.js'
+
 export default class Main {
     constructor() {
         this.bigContainer = document.querySelector('.global-container')
-        this.littleContainer = document.querySelector('.little-container')
+        this.src = true
 
-        this.zoom()
+        this.switchingPannels()
     }
 
-    zoom() {
-        this.littleContainer.addEventListener('click', () => {
-            this.littleContainer.style.transform = 'scale(20)'
-            this.littleContainer.style.opacity = '0'
-            console.log('oui')
+    switchingPannels() {
+        const oui = new InPageContainer()
+        
+        oui.picture.addEventListener('click', () => {
+            oui.materials.style.transform = 'scale(20)'
+            oui.materials.style.opacity = '0'
 
             window.setTimeout(() => {
-                this.bigContainer.removeChild(this.littleContainer)
-
-                window.setTimeout(() => {
-                    this.bigContainer.appendChild(this.littleContainer)
-                    this.littleContainer.style.transform = 'scale(1)'
-                    this.littleContainer.style.opacity = '1'
-                }, 1000)
-            }, 1000)
+                this.bigContainer.removeChild(oui.materials)
+            }, 500)
         })
     }
 }    
