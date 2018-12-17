@@ -1,0 +1,79 @@
+.global-container {
+    .title-1 {
+        position: relative;
+        width: 15%;
+        top: 5%;
+        left: 5%;
+        color: black;
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+        transition: 0.4s ease-in;
+
+        &:hover {
+            color: white;
+            cursor: pointer;
+            animation: bounce 0.4s 1;
+
+            @keyframes bounce {
+                0% {transform: translateX(-10%)}
+                20% {transform: translateX(8%)}
+                40% {transform: translateX(-6%)}
+                60% {transform: translateX(4%)}
+                80% {transform: translateX(-2%)}
+                100% {transform: translateX(0)}
+            }
+        }
+    }
+
+    .materials-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.4s ease-in-out;
+    
+        .template-picture-1 {
+            width: 65%;
+            height: 65%;
+            will-change: opacity transform;
+            transform: translateY(55%) translateX(-10%) scale(0.7);
+        }
+    
+        .explaination-1 {
+            will-change: transform;
+            width: 65%;
+            height: 65%;
+            transform: translateY(17.5%);
+            margin-right: 10%;
+            display: flex;
+            flex-direction: column;
+    
+            .number-1 {
+                font-size: 2.5em;
+                font-family: 'WorkSans', Arial, Helvetica, sans-serif;
+                color: black;
+            }
+    
+            .date-title-1 {
+                text-align: start;
+                font-family: 'WorkSans', Arial, Helvetica, sans-serif;
+                font-size: 2.5em;
+                color: white;
+                margin-bottom: 15%;
+            }
+    
+            .text-1 {
+                font-family: 'Raleway', Arial, Helvetica, sans-serif;
+                font-size: 1.5em;
+                text-align: start;
+                color: white;
+            }
+
+            .ct-chart-1 {
+                margin-top: 10%;
+            }
+        }
+    }
+}
+
+

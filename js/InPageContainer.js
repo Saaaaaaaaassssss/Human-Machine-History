@@ -1,11 +1,11 @@
 export default class InPageContainer {
     constructor() {
-        this.materials = document.querySelector('.materials')
-        this.picture = document.querySelector('.template-picture')
-        this.explaination = document.querySelector('.explaination')
-        this.title = document.querySelector('.date-title')
-        this.text = document.querySelector('.text')
-        this.button = document.querySelector('.button')
+        this.materials = document.querySelector('.materials-1')
+        this.picture = document.querySelector('.template-picture-1')
+        this.explaination = document.querySelector('.explaination-1')
+        this.title = document.querySelector('.date-title-1')
+        this.text = document.querySelector('.text-1')
+        this.button = document.querySelector('.button-1')
         this.state = true
 
         this.removingCurrentMaterials()
