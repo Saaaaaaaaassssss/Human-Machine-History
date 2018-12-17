@@ -5,33 +5,27 @@ export default class InPageContainer {
         this.explaination = document.querySelector('.explaination-1')
         this.title = document.querySelector('.date-title-1')
         this.text = document.querySelector('.text-1')
-        this.button = document.querySelector('.button-1')
+        this.button = document.querySelector('.button')
         this.state = true
+        this.chart = document.querySelector('.ct-chart')
+        this.currentContents = 1
 
-        this.removingCurrentMaterials()
+        this.changingCurrentsMaterials()
     }
 
-    removingCurrentMaterials() {
+    changingCurrentsMaterials() {
         this.button.addEventListener('click', () => {
+            this.currentContents = 1
+
             this.picture.style.transition = '0.4s ease-in-out'
             this.picture.style.transform = 'translateX(-115%) translateY(47.5%)'
             this.picture.style.opacity = '0'
             this.removingContents(this.materials, this.picture)
 
-            this.title.style.transition = '0.4s ease-in-out 0.1s'
-            this.title.style.transform = 'translateX(70%)'
-            this.title.style.opacity = '0'
-            this.removingContents(this.explaination, this.title)
-
-            this.text.style.transition = '0.4s ease-in-out 0.2s'
-            this.text.style.transform = 'translateX(90%)'
-            this.text.style.opacity = '0'
-            this.removingContents(this.explaination, this.text)
-
-            this.button.style.transition = '0.4s ease-in-out'
-            this.button.style.transform = 'translateX(110%) translateY(65%)'
-            this.button.style.opacity = '0'
-            this.removingContents(this.explaination, this.button)
+            this.explaination.style.transition = '0.4s ease-in-out'
+            this.explaination.style.transform = 'translateX(50%)'
+            this.explaination.style.opacity = '0'
+            this.removingContents(this.materials, this.explaination)
 
             window.setTimeout(() => {
                 this.materials.style.display = 'flex'
@@ -41,29 +35,31 @@ export default class InPageContainer {
                 this.picture.style.transform = 'translateY(47.5%) translateX(-20%)'
                 this.picture.style.opacity = '1'
                 
-                if(this.state === true ) {
-                    this.picture.setAttribute('src', '../assets/picture/templatePicture.png')
-                    this.state = false
-                } else if(this.state === false) {
-                    this.picture.setAttribute('src', '../assets/picture/hihi.png')
-                    this.state = true
-                }
-                this.addingContents(this.materials, this.picture)
+                if(this.currentContents === 1) {
+                    this.picture.setAttribute('src', '../assets/picture/train.png')
+                    this.picture.style.transform = 'scale(0.6)'
 
-                this.title.style.transition = '0.4s ease-in-out 0.1s'
-                this.title.style.transform = 'translateX(-70%)'
-                this.title.style.opacity = '1'
-                this.addingContents(this.explaination, this.title)
+                    this.addingContents(this.materials, this.explaination)
+                    this.addingContents(this.explaination, this.title)
+                    this.title.innerHTML = 'Locomotive'
 
-                this.text.style.transition = '0.4s ease-in-out 0.2s'
-                this.text.style.transform = 'translateX(-90%)'
-                this.text.style.opacity = '1'
-                this.addingContents(this.explaination, this.text)
+                    this.button.addEventListener('click', () => {
+                        this.currentContents = 2 
 
-                this.button.style.transition = '0.4s ease-in-out'
-                this.button.style.transform = 'translateX(-110%) translateY(65%)'
-                this.button.style.opacity = '1'
-                this.addingContents(this.explaination, this.button)
+                        if(this.currentContents === 2) {
+                            this.picture.setAttribute('src', '../assets/picture/usine.png')
+                            this.picture.style.transform = 'scale(0.6)'
+        
+                            this.addingContents(this.materials, this.explaination)
+                            this.addingContents(this.explaination, this.title)
+                            this.title.innerHTML = 'Industries'
+        
+                            this.currentContents = 3
+                        }
+                    })
+                }  
+
+                this.addingContents(this.materials, this.picture)   
             }, 400)
         })
     }
@@ -83,5 +79,14 @@ export default class InPageContainer {
             }
         }, 400)
     }
+
+    upingOpacity(_item) {
+        for(let j = 0; j < 10; j++) {
+            window.setTimeout(() => {
+                _item.style.opacity = `${this.opacity}`
+            }, 25)
+        }
+    }
 }
+
 

@@ -31,11 +31,11 @@ export default class Main {
 
                     this.bigContainer.appendChild(pannels.materials)
 
-                    for(let k = 0; k < 10; k++) {
+                    //for(let k = 0; k < 10; k++) {
                         if(pannels.materials.style.opacity < '1') {
                             this.upingOpacity(pannels.materials)
                         }
-                    } 
+                     
                 }, 400)
             }, 400)
         })
