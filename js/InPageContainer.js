@@ -1,3 +1,5 @@
+import Count from './CountUp.js'
+
 export default class InPageContainer {
     constructor() {
         this.materials = document.querySelector('.materials-1')
@@ -7,8 +9,10 @@ export default class InPageContainer {
         this.text = document.querySelector('.text-1')
         this.button = document.querySelector('.button')
         this.state = true
-        this.chart = document.querySelector('.ct-chart')
-        this.currentContents = 1
+        this.currentContents = 0
+        this.currentPannels = 1 
+
+        this.count = new Count()
 
         this.changingCurrentsMaterials()
     }
@@ -53,11 +57,13 @@ export default class InPageContainer {
                             this.addingContents(this.materials, this.explaination)
                             this.addingContents(this.explaination, this.title)
                             this.title.innerHTML = 'Industries'
-        
+
                             this.currentContents = 3
                         }
                     })
-                }  
+                }
+                this.count.number = 0
+                this.count.upingNumbers()
 
                 this.addingContents(this.materials, this.picture)   
             }, 400)

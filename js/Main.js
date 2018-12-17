@@ -1,8 +1,11 @@
 import InPageContainer from './InPageContainer.js'
+import Count from './CountUp.js';
 
 export default class Main {
     constructor() {
         this.bigContainer = document.querySelector('.global-container')
+        this.number = document.querySelector('.number-1')
+        this.count = new Count()
 
         this.switchingPannels()
     }
@@ -12,32 +15,27 @@ export default class Main {
         this.opacity = pannels.materials.style.opacity
         
         pannels.picture.addEventListener('click', () => {
-            pannels.materials.style.transform = 'scale(15)'
-            pannels.materials.style.opacity = '0'
-
-            window.setTimeout(() => {
-                this.bigContainer.removeChild(pannels.materials)
-
+            if(pannels.currentPannels === 1) {
+                pannels.materials.style.transform = 'scale(5)'
+                pannels.materials.style.opacity = '0'
+    
                 window.setTimeout(() => {
-                    pannels.materials.style.transform = 'scale(1)'
+                    this.bigContainer.removeChild(pannels.materials)
+    
+                    window.setTimeout(() => {
+                        pannels.materials.style.transform = 'scale(1)'
 
-                    if(this.state === true ) {
-                        this.picture.setAttribute('src', '../assets/picture/templatePicture.png')
-                        this.state = false
-                    } else if(this.state === false) {
-                        this.picture.setAttribute('src', '../assets/picture/hihi.png')
-                        this.state = true
-                    }
+                        this.number.innerHTML = 0
+                        this.count.upingNumbers()
+                        
+                        this.bigContainer.appendChild(pannels.materials)
 
-                    this.bigContainer.appendChild(pannels.materials)
-
-                    //for(let k = 0; k < 10; k++) {
                         if(pannels.materials.style.opacity < '1') {
                             this.upingOpacity(pannels.materials)
-                        }
-                     
+                        } 
+                    }, 400)
                 }, 400)
-            }, 400)
+            }
         })
     }
 

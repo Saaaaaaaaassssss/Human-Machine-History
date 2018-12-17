@@ -1,2 +1,2 @@
-.ct-series-a .ct-line{stroke:white;stroke-width:2px;transition:0.4s ease-in-out;animation:white-to-black 4s infinite}@keyframes white-to-black{0%{stroke:white}50%{stroke:black}100%{stroke:white}}.ct-series-a .ct-point{stroke:black;stroke-width:15px;transition:0.4s ease-in;animation:black-to-white 4s infinite}@keyframes black-to-white{0%{stroke:black}50%{stroke:white}100%{stroke:black}}
+.ct-series-a .ct-line{stroke:white;stroke-width:2px;animation:white-to-black 4s infinite}@keyframes white-to-black{0%{stroke:white}50%{stroke:black}100%{stroke:white}}.ct-series-a .ct-point{stroke:black;stroke-width:10px;animation:black-to-white 4s infinite}@keyframes black-to-white{0%{stroke:black}50%{stroke:white}100%{stroke:black}}
 /*# sourceMappingURL=chartsconfig.css.map */

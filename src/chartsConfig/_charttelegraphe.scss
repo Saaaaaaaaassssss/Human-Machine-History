@@ -2,7 +2,6 @@
     .ct-line {
         stroke: white;
         stroke-width: 2px;
-        transition: 0.4s ease-in-out;
         animation: white-to-black 4s infinite;
     }
 
@@ -14,8 +13,7 @@
 
     .ct-point {
         stroke: black;
-        stroke-width: 15px;
-        transition: 0.4s ease-in;
+        stroke-width: 10px;
         animation: black-to-white 4s infinite;
     }
 
@@ -26,3 +24,5 @@
     }
 }
 
+.ct-chart-1 {
+}
