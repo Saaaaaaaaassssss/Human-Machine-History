@@ -23,12 +23,9 @@ export default class Main {
             if(pannels.currentPannels === 1) {
                 pannels.materials.style.transform = 'scale(5)'
                 pannels.materials.style.opacity = '0'
-
-                this.chart.style.transition = 'O.4s ease-in-out'
-                this.chart.style.display = 'none'
     
                 window.setTimeout(() => {
-                    this.bigContainer.removeChild(pannels.materials)
+                    //this.bigContainer.removeChild(pannels.materials)
     
                     window.setTimeout(() => {
                         pannels.materials.style.transform = 'scale(1)'
@@ -45,6 +42,14 @@ export default class Main {
                         if(pannels.materials.style.opacity < '1') {
                             this.upingOpacity(pannels.materials)
                         } 
+
+                        pannels.button.addEventListener('click', () => {
+                            pannels.currentContents = 1
+
+                            if((pannels.currentPannels === 1) && (pannels.currentContents === 1)) {
+                                console.log('oui')
+                            }
+                        })
                     }, 400)
                 }, 400)
             }

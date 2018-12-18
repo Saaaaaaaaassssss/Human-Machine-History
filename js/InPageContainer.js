@@ -50,10 +50,9 @@ export default class InPageContainer {
                     this.explaination.style.opacity ='1'
 
                     this.addingContents(this.materials, this.explaination)
+                    this.currentContents = 2 
 
                     this.button.addEventListener('click', () => {
-                        this.currentContents = 2 
-
                         if(this.currentContents === 2) {
                             this.picture.setAttribute('src', '../assets/picture/usine.png')
                             this.picture.style.transform = 'scale(0.6)'
