@@ -12,9 +12,12 @@ body
             {
                 height:100vh;
                 width:calc(100vw/6);
-                transform:skew(10deg);
                 transition: all  0.3s ease-in;
                 background-repeat: no-repeat;
+            }
+            &:after
+            {                
+                transform:skew(10deg);
             }
             // .menu-slider-1, .menu-slider-2, .menu-slider-3, .menu-slider-4, .menu-slider-5, .menu-slider-6
             // {
