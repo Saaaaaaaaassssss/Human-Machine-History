@@ -5,3 +5,4 @@ let data = {
     ]
 }
 new Chartist.Line('.ct-chart-1', data)
+
