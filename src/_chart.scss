@@ -1,0 +1,30 @@
+.ct-chart-1
+{
+  .ct-line {
+    /* Set the colour of this series line */
+    stroke: white;
+    /* Control the thikness of your lines */
+    stroke-width: 5px;
+    /* Create a dashed line with a pattern */
+    stroke-dasharray: 10px 0px;
+  } 
+  .ct-point {
+    /* Colour of your points */
+    stroke: white;
+    /* Size of your points */
+    stroke-width: 10px;
+    /* Make your points appear as squares */
+    stroke-linecap: round;
+  }
+  .ct-grid
+  {
+    stroke-dasharray: none;
+    stroke:none;
+  }
+  .ct-label
+  {
+    color:white;
+    font-size:1em;
+
+  }
+}

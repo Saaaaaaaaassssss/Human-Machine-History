@@ -13,6 +13,35 @@ let data2 = {
     ]
 }
 
+let data3 = {
+  labels: ['1950','2017'],
+  series: [
+    [31000000, 4093000000]
+  ]
+}
+
+let data4 = {
+  labels: ['1923','1929'],
+  series: [
+    [60000000, 840000000]
+  ]
+}
+
+let data5 = {
+  labels: ['1950','1960'],
+  series: [
+    [3000000, 55000000]
+  ]
+}
+
+
+let chartDraw = (_data) =>
+{
+  new Chartist.Line('.ct-chart-1', _data)
+
+}
+
+
 new Chartist.Line('.ct-chart-1', data)
 
 
