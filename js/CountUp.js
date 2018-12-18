@@ -5,13 +5,13 @@ export default class Count {
         this.upingNumbers()
     }
 
-    upingNumbers() {
+    upingNumbers(_value) {
         let options = {
               useEasing: true, 
               useGrouping: true
         }
         
-        let countAnim = new CountUp(this.number, 0, 50, 0, 3, options)
+        let countAnim = new CountUp(this.number, 0, _value, 0, 3, options)
         if (!countAnim.error) {
             countAnim.start()
         } else {

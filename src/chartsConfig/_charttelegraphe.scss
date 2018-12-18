@@ -7,22 +7,24 @@
 
     @keyframes white-to-black {
         0% {stroke: white}
-        50% {stroke: black}
+        50% {stroke: gray}
         100% {stroke: white}
     }
 
     .ct-point {
         stroke: black;
-        stroke-width: 10px;
+        stroke-width: 5px;
         animation: black-to-white 4s infinite;
     }
 
     @keyframes black-to-white {
-        0% {stroke: black}
+        0% {stroke: gray}
         50% {stroke: white}
-        100% {stroke: black}
+        100% {stroke: gray}
     }
 }
 
-.ct-chart-1 {
+.ct-grid {
+    stroke: white;
 }
+

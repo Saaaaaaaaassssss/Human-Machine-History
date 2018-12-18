@@ -8,9 +8,10 @@ export default class InPageContainer {
         this.title = document.querySelector('.date-title-1')
         this.text = document.querySelector('.text-1')
         this.button = document.querySelector('.button')
+        this.time = document.querySelector('.title-1')
         this.state = true
         this.currentContents = 0
-        this.currentPannels = 1 
+        this.currentPannels = 0
 
         this.count = new Count()
 
@@ -40,12 +41,15 @@ export default class InPageContainer {
                 this.picture.style.opacity = '1'
                 
                 if(this.currentContents === 1) {
-                    this.picture.setAttribute('src', '../assets/picture/train.png')
-                    this.picture.style.transform = 'scale(0.6)'
+                    this.picture.setAttribute('src', '../assets/picture/trains.png')
+                    this.picture.style.transform = 'translateY(30%) translateX(-5%) scale(0.8)'
+
+                    this.text.innerHTML = "Les machines à vapeur, et la locomotive, révolutionnèrent la façon dont l'Homme pensait son environnement proche, et sa manière de commercer."
+                    this.title.innerHTML = 'Locomotive'
+
+                    this.explaination.style.opacity ='1'
 
                     this.addingContents(this.materials, this.explaination)
-                    this.addingContents(this.explaination, this.title)
-                    this.title.innerHTML = 'Locomotive'
 
                     this.button.addEventListener('click', () => {
                         this.currentContents = 2 
@@ -54,9 +58,10 @@ export default class InPageContainer {
                             this.picture.setAttribute('src', '../assets/picture/usine.png')
                             this.picture.style.transform = 'scale(0.6)'
         
+                            this.title.innerHTML = 'Industries'
+
                             this.addingContents(this.materials, this.explaination)
                             this.addingContents(this.explaination, this.title)
-                            this.title.innerHTML = 'Industries'
 
                             this.currentContents = 3
                         }
