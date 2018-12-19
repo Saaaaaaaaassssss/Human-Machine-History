@@ -162,6 +162,7 @@ body {
         align-items: center;
         justify-content: center;
         display:none;
+        opacity:0;
         flex-direction: column;
         width:100vw;
         height:100vh;
@@ -171,6 +172,7 @@ body {
         position: fixed;
         top:0;
         left:0;
+        transition: all 0.3s ease-in-out;
         .sources-title
         {
             font-family: 'WorkSans', Arial, Helvetica, sans-serif;
@@ -188,6 +190,18 @@ body {
             &:hover
             {
                 color:#60308B;
+            }
+        }
+        .sources-exit {
+            position: fixed;
+            width:50%;
+            top:3%;
+            right:1.5%;
+            display:flex;
+            justify-content: flex-end;
+            z-index:2;
+            img {
+                width: 5%;
             }
         }
     }

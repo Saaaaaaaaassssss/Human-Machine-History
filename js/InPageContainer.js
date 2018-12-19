@@ -18,6 +18,30 @@ export default class InPageContainer {
         this.quoteBlock = document.querySelector('.quote')
         this.quoteText = document.querySelector('.quote-text')
         this.comments = document.querySelector('.comments')
+        this.sourcesButton = document.querySelector('.sources-button')
+        this.sources = document.querySelector('.sources')
+        this.sourcesExitButton = document.querySelector('.sources-exit')
+        this.menu = document.querySelector('.menu-flex')
+        this.menuSlider1 = document.querySelector('.menu-slider-1')
+        this.menuSlider2 = document.querySelector('.menu-slider-2')
+        this.menuSlider3 = document.querySelector('.menu-slider-3')
+        this.menuSlider4 = document.querySelector('.menu-slider-4')
+        this.menuSlider5 = document.querySelector('.menu-slider-5')
+        this.menuSlider6 = document.querySelector('.menu-slider-6')
+        this.menuSlider7 = document.querySelector('.menu-slider-7')
+        this.sound1 = new Audio('../assets/songs/telegraphe.mp3')
+        this.sound2 = new Audio('../assets/songs/locomotive.mp3')
+        this.sound3 = new Audio('../assets/songs/industries2.mp3')
+        this.sound4 = new Audio('../assets/songs/chars.mp3')
+        this.sound5 = new Audio('../assets/songs/avion2.mp3')
+        this.sound6 = new Audio('../assets/songs/enigma.mp3')
+        this.sound7 = new Audio('../assets/songs/avioncivil.mp3')
+        this.sound8 = new Audio('../assets/songs/radio.mp3')
+        this.sound9 = new Audio('../assets/songs/television.mp3')
+        this.sound10 = new Audio('../assets/songs/internet.mp3')
+        this.sound11 = new Audio('../assets/songs/robotique.mp3')
+        this.sound11.volume = 0.4
+        this.sound12 = new Audio('../assets/songs/ai.mp3')
         this.state = true
         this.currentContents = 1
         this.currentPannels = 0
@@ -28,6 +52,15 @@ export default class InPageContainer {
     }
 
     changingCurrentsMaterials() {
+        let songStart = (_launchAudio) => {
+            _launchAudio.play()
+        }
+
+        let songStop = (_launchAudio) => {
+            _launchAudio.pause()
+            _launchAudio.currentTime = 0
+        }
+
         this.button.addEventListener('click', () => {
             if(this.currentPannels===0) {
                 this.picture.style.transition = '0.4s ease-in-out'
@@ -45,6 +78,8 @@ export default class InPageContainer {
                         this.animatedNumber.style.display='none'
                         this.text2.style.display = 'none'
                         this.comments.innerHTML = "Nombre d'employés du secteur ferroviaire en France, en milliers."
+                        songStop(this.sound1)
+                        songStart(this.sound2)
                         this.addingContents(this.materials, this.picture)
                         this.addingContents(this.materials, this.explaination)
                     }, 400)
@@ -72,6 +107,8 @@ export default class InPageContainer {
                         this.text2.innerHTML="C’est l’augmentation du nombre de femmes faisant partie de la population active française entre 1911 et 1921 (7,72 millions à 8,71 millions)."
                         this.text2.style.display = 'block'
                         this.comments.style.display = 'none'
+                        songStart(this.sound3)
+                        songStop(this.sound2)
                         this.addingContents(this.materials, this.picture)
                         this.addingContents(this.materials, this.explaination)
                     }, 400)
@@ -93,14 +130,17 @@ export default class InPageContainer {
                 this.materials.style.opacity='0'
 
                 if(this.currentContents===3) {
+                    songStop(this.sound3)
                     this.quoteText.innerHTML="Les deux guerres mondiales ont changé drastiquement la relation entre les hommes et les machines. L’arrivée des chars et des avions, ainsi que les prémices de l’informatique, initièrent ce mouvement. <br> <br>Ces progrès aggravèrent ces conflits et les rendirent meurtriers. Malgré cela, ils permirent aux hommes de profiter de boom économiques et de faciliter leur quotidien."
                 }
 
                 if(this.currentContents===6) {
+                    songStop(this.sound6)
                     this.quoteText.innerHTML="Après les deux guerres mondiales, les avancées technologiques émises pendant ces conflits arrivèrent dans le domaine civil. <br> <br> Par exemple, les progrès dans le domaine de l’aéronautique facilitèrent les échanges et les déplacements des hommes dans le monde. Cependant, ces progrès créerent plus de problèmes environnementaux, notamment de pollution."
                 }
 
                 if (this.currentContents===8) {
+                    songStop(this.sound7)
                     this.quoteText.innerHTML="L’utilisation des machines (radio, télévision) permis aux médias d’agrandir leur audience et in fine, leur impact. <br> <br> Leur impact économique fut énorme car ces nouveaux supports révolutionnèrent le marketing et la publicité, incitant à la consommation de masse, qui apparut durant les Trente Glorieuses. Malgré cela, ces outils permirent aussi de créer un différent type de propagande, néfaste aux libertés fondamentales de l’Homme."
 
                     window.setTimeout(() => {
@@ -109,9 +149,11 @@ export default class InPageContainer {
                     }, 600)
                 }
                 if (this.currentContents===12) {
+                    songStop(this.sound10)
                     this.quoteText.innerHTML="La robotique et l'intelligence artificielle prennent une part de plus en plus conséquente dans les économies aujourd'hui. Cette tendance devrait s’accélérer avec l’arrivée de machines de plus en plus autonomes, intelligentes et interconnectées, les robots. <br><br>Le rôle de l’homme devrait alors se limiter au contrôle, à la surveillance et à la maintenance de ces machines. Mais de nombreuses personnes craignent que celles-ci les remplacent dans le monde du travail."
                 }
                 if (this.currentContents===13) {
+                    songStop(this.sound12)
                     this.quoteText.innerHTML="Au travers des différentes périodes montrées, nous avons pu voir la collaboration entre l’homme et la machine dans les économies. <br><br>Avec l’arrivée de la robotique et de l’intelligence artificielle, le marché du travail se trouvera bouleversé.<br><br>Mais une question reste en suspens. Comment vont s'affirmer ces technologies dans le modèle économique de demain ? Vont-elles tout simplement effacer le travail humain ? Ou au contraire, vont-elles contribuées à l’essor de nouveaux métiers, au détriment d’autres ?"
                 }
 
@@ -140,6 +182,8 @@ export default class InPageContainer {
                        this.animatedNumber.style.display='none'
                        this.animatedNumber2.style.display='block'
                        this.comments.style.display = 'none'
+                       songStart(this.sound5)
+                       songStop(this.sound4)
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
                    }, 400)
@@ -165,6 +209,8 @@ export default class InPageContainer {
                        this.text2.style.display = 'block'
                        this.animatedNumber2.style.display='none'
                        this.comments.style.display = 'none'
+                       songStart(this.sound6)
+                       songStop(this.sound5)
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
                    }, 400)
@@ -234,6 +280,8 @@ export default class InPageContainer {
                        this.comments.style.display = 'block'
                        this.comments.innerHTML = "Nombre d'utilisateurs de télévision aux États-Unis, en millions."
                        this.currentContents=11
+                       songStart(this.sound9)
+                       songStop(this.sound8)
                    }, 400)
 
                    window.setTimeout(() => {
@@ -260,6 +308,8 @@ export default class InPageContainer {
                        this.comments.style.display = 'none'
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
+                       songStart(this.sound10)
+                       songStop(this.sound9)
                    }, 400)
 
                    window.setTimeout(() => {
@@ -287,6 +337,8 @@ export default class InPageContainer {
                        this.text2.innerHTML = "milliards de $ par an, c'est ce que les applications médicales utilisant l'intelligence artificielle devraient permettre aux Etats-Unis d'économiser d'ici 2026."
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
+                       songStart(this.sound12)
+                       songStop(this.sound11)
                    }, 400)
 
                    window.setTimeout(() => {
@@ -335,6 +387,7 @@ export default class InPageContainer {
                     this.animatedNumber.style.display = 'block'
                     this.count.upingNumbers(50)
                     this.beginExperience=3
+                    songStart(this.sound1)
                 }, 500)            
             }
 
@@ -360,6 +413,8 @@ export default class InPageContainer {
                     this.animatedNumber2.style.display='none'
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
+                    songStart(this.sound4)
+                    songStop(this.sound3)
                 }, 300)
 
                 window.setTimeout(() => {
@@ -396,6 +451,8 @@ export default class InPageContainer {
                     this.materials.style.opacity='1'
                     this.comments.style.display = 'block'
                     this.comments.innerHTML = "Nombre de passagers aériens par an, en millions."
+                    songStart(this.sound7)
+                    
                 }, 300)
 
                 window.setTimeout(() => {
@@ -433,6 +490,7 @@ export default class InPageContainer {
                     this.chart.style.display='none'
                     this.comments.style.display = 'none'
                     this.animatedNumber2.style.display='block'
+                    songStart(this.sound8)
                 }, 300)
 
                 window.setTimeout(() => {
@@ -471,6 +529,7 @@ export default class InPageContainer {
                     this.comments.style.display = 'none'
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
+                    songStart(this.sound11)
                 }, 300)
 
                 window.setTimeout(() => {
@@ -484,6 +543,18 @@ export default class InPageContainer {
             }
             this.quoteTime=false
         })
+        this.sourcesButton.addEventListener('click', () =>{
+            this.sources.style.display='flex'
+            window.setTimeout(() => {
+                this.sources.style.opacity='1'
+            }, 50)
+        })
+        this.sourcesExitButton.addEventListener('click', () =>{
+            this.sources.style.opacity='0'
+            window.setTimeout(() => {
+                this.sources.style.display='none'
+            }, 300)
+        })
     }
 
     removingContents(_parent, _child) {
@@ -494,3 +565,4 @@ export default class InPageContainer {
         _parent.appendChild(_child)
     }
 }
+

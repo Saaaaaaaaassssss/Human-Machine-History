@@ -1,4 +1,16 @@
 .global-container {
+    .sources-button {
+        position: fixed;
+        width:50%;
+        top:3%;
+        right:1.5%;
+        display:flex;
+        justify-content: flex-end;
+        z-index:2;
+        img {
+            width: 5%;
+        }
+    }
     .title-1 {
         position: relative;
         width: 100%;
