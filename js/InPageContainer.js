@@ -253,7 +253,7 @@ export default class InPageContainer {
                        this.title.innerHTML = `L'IA`
                        this.count.upingNumbers(61)
                        this.count.upingNumbers2(150)
-                       this.picture.setAttribute('src', '../assets/picture/future.png')
+                       this.picture.setAttribute('src', '../assets/picture/ia.png')
                        this.text.innerHTML = "pourcents des entreprises utilisent l'intelligence artificielle pour identifier des opportunités qu'ils auraient probablement ratés."
                        this.text2.style.display = 'block'
                        this.text2.innerHTML = "milliards de $ par an, c'est ce que les applications médicales utilisant l'intelligence artificielle devraient permettre aux Etats-Unis d'économiser d'ici 2026"
