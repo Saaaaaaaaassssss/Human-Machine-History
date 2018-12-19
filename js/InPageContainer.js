@@ -42,6 +42,7 @@ export default class InPageContainer {
         this.sound11 = new Audio('../assets/songs/robotique.mp3')
         this.sound11.volume = 0.4
         this.sound12 = new Audio('../assets/songs/ai.mp3')
+        this.volumeButton = document.querySelector('.sound-button')
         this.state = true
         this.currentContents = 1
         this.currentPannels = 0
@@ -49,6 +50,7 @@ export default class InPageContainer {
         this.beginExperience = 0
         this.count = new Count()
         this.changingCurrentsMaterials()
+        this.muted = false
     }
 
     changingCurrentsMaterials() {
@@ -554,6 +556,49 @@ export default class InPageContainer {
             window.setTimeout(() => {
                 this.sources.style.display='none'
             }, 300)
+        })
+
+        this.volumeButton.addEventListener('click', () => {
+            if(this.muted){
+                this.volumeButton.style.opacity='0'
+                this.muted = false
+                this.sound1.volume= 1
+                this.sound2.volume= 1
+                this.sound3.volume= 1
+                this.sound4.volume= 1
+                this.sound5.volume= 1
+                this.sound6.volume= 1
+                this.sound7.volume= 1
+                this.sound8.volume= 1
+                this.sound9.volume= 1
+                this.sound10.volume= 0.4
+                this.sound11.volume= 1
+                this.sound12.volume= 1
+                window.setTimeout(() => {
+                    this.volumeButton.setAttribute('src', '../assets/picture/soundUnmuted.png')
+                    this.volumeButton.style.opacity='1'
+                }, 100)
+            }
+            else{
+                this.volumeButton.style.opacity='0'
+                this.muted = true
+                this.sound1.volume= 0
+                this.sound2.volume= 0
+                this.sound3.volume= 0
+                this.sound4.volume= 0
+                this.sound5.volume= 0
+                this.sound6.volume= 0
+                this.sound7.volume= 0
+                this.sound8.volume= 0
+                this.sound9.volume= 0
+                this.sound10.volume= 0
+                this.sound11.volume= 0
+                this.sound12.volume= 0
+                window.setTimeout(() => {
+                    this.volumeButton.setAttribute('src', '../assets/picture/soundMuted.png')
+                    this.volumeButton.style.opacity='1'
+                }, 100)
+            }
         })
     }
 
