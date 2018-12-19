@@ -99,7 +99,7 @@ export default class InPageContainer {
                         this.removingContents(this.materials, this.picture)
                         this.removingContents(this.materials, this.explaination)
                         this.picture.setAttribute('src', '../assets/picture/puit.png')
-                        this.text.innerHTML = "pourcent, cela représente l’augmentation du salaire des ouvriers après l’arrivée du fordisme en 1908."
+                        this.text.innerHTML = "pour cent, cela représente l’augmentation du salaire des ouvriers après l’arrivée du fordisme en 1908."
                         this.title.innerHTML = 'Industries'
                         this.animatedNumber.style.display='block'
                         this.count.upingNumbers(150)
@@ -301,7 +301,7 @@ export default class InPageContainer {
                        this.count.upingNumbers(21)
                        this.count.upingNumbers2(22)
                        this.picture.setAttribute('src', '../assets/picture/planete1.png')
-                       this.text.innerHTML = "pourcent, elle représente l'augmentation du PIB dans les économies matures qui découle d'Internet. C'est aujourd'hui un des secteurs qui recrute le plus."
+                       this.text.innerHTML = "pour cent, elle représente l'augmentation du PIB dans les économies matures qui découle d'Internet. C'est aujourd'hui un des secteurs qui recrute le plus."
                        this.text2.innerHTML = "milliards de dollars d'échanges ont lieu chaque jour au travers du e-commerce. <br> 10% de moins, c'est en moyenne la différence de prix entre un produit acheté en ligne ou dans un magasin physique."
                        this.title.innerHTML = 'Internet'
                        this.chart.style.display = 'none'
@@ -333,7 +333,7 @@ export default class InPageContainer {
                        this.count.upingNumbers(61)
                        this.count.upingNumbers2(150)
                        this.picture.setAttribute('src', '../assets/picture/ia.png')
-                       this.text.innerHTML = "pourcents des entreprises utilisent l'intelligence artificielle pour identifier des opportunités qu'ils auraient probablement ratés."
+                       this.text.innerHTML = "pour cent des entreprises utilisent l'intelligence artificielle pour identifier des opportunités qu'ils auraient probablement ratés."
                        this.text2.style.display = 'block'
                        this.comments.style.display = 'none'
                        this.text2.innerHTML = "milliards de $ par an, c'est ce que les applications médicales utilisant l'intelligence artificielle devraient permettre aux Etats-Unis d'économiser d'ici 2026."
@@ -480,7 +480,7 @@ export default class InPageContainer {
                     this.count.upingNumbers(80)
                     this.count.upingNumbers2(400000000)
                     this.picture.setAttribute('src', '../assets/picture/radio.png')
-                    this.text.innerHTML = "pourcents des foyers des pays développés possèdent une radio en 1950."
+                    this.text.innerHTML = "pour cent des foyers des pays développés possèdent une radio en 1950."
                     this.text2.innerHTML = "dollars, c’est le montant dépensé dans des publicités radiophoniques en 1949, créant des milliers d'emplois dans le secteur. <br> La radio révolutionna les codes du marketing, offrant un support de communication de masse."
                     this.title.innerHTML = 'Radio'
                     this.chart.style.display = 'block'
@@ -522,7 +522,7 @@ export default class InPageContainer {
                     this.animatedNumber2.style.display = 'block'
                     this.count.upingNumbers2(50)
                     this.text2.style.display = 'block'
-                    this.text2.innerHTML = "pourcents, c'est l'augmentation prévisionnelle de l'utilisation de la robotique dans le domaine médical en 2019."
+                    this.text2.innerHTML = "pour cent, c'est l'augmentation prévisionnelle de l'utilisation de la robotique dans le domaine médical en 2019."
                     this.title.innerHTML = 'Robotique'
                     this.addingContents(this.materials, this.picture)
                     this.addingContents(this.materials, this.explaination)
