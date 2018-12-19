@@ -1,4 +1,4 @@
-.ct-chart-1 {
+.ct-chart-1, .ct-chart-2 {
   .ct-line {
     /* Set the colour of this series line */
     stroke: white;
@@ -12,7 +12,7 @@
     /* Colour of your points */
     stroke: white;
     /* Size of your points */
-    stroke-width: 10px;
+    stroke-width: 12px;
     /* Make your points appear as squares */
     stroke-linecap: round;
   }

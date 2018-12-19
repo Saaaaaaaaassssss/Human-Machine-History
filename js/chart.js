@@ -4,12 +4,18 @@ let options = {
 }
 
 let data = {
-    labels: ['1870','1880', '1890', '1900'],
+    labels: ['1800','1870'],
     series: [
-      [9, 16, 36, 63]
+      [36000, 1000000]
     ]
 }
 
+let data1 = {
+  labels: ['1911','1921'],
+  series: [
+    [7.72, 8.61]
+  ]
+}
 
 let data2 = {
     labels: ['1850','1875', '1890', '1910'],
@@ -39,13 +45,20 @@ let data5 = {
   ]
 }
 
-
-let chartDraw = (_data) =>
-{
-  new Chartist.Line('.ct-chart-1', _data, options)
-
+let data6 = {
+  labels: ['1949', '1953'],
+  series: [
+    [500, 200]
+  ]
 }
 
+let chartDraw = (_data) => {
+  new Chartist.Line('.ct-chart-1', _data, options)
+}
+
+let chartDraw2 = (_data2) => {
+  new Chartist.Line('.ct-chart-2', _data2, options)
+}
 
 new Chartist.Line('.ct-chart-1', data, options)
 

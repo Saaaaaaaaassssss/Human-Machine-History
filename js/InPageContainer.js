@@ -1,6 +1,5 @@
 import Count from './CountUp.js'
-let quoteTime=false
-let beginExperience=0
+
 export default class InPageContainer {
     constructor() {
         this.container = document.querySelector('.global-container')
@@ -13,6 +12,7 @@ export default class InPageContainer {
         this.button = document.querySelector('.button')
         this.time = document.querySelector('.title-1')
         this.chart = document.querySelector('.ct-chart-1')
+        this.chart2 = document.querySelector('.ct-chart-2')
         this.animatedNumber = document.querySelector('.number-1')
         this.animatedNumber2 = document.querySelector('.number-2')
         this.quoteBlock = document.querySelector('.quote')
@@ -20,6 +20,8 @@ export default class InPageContainer {
         this.state = true
         this.currentContents = 1
         this.currentPannels = 0
+        this.quoteTime = false
+        this.beginExperience = 0
         this.count = new Count()
         this.changingCurrentsMaterials()
     }
@@ -40,6 +42,7 @@ export default class InPageContainer {
                         this.text.innerHTML = "Les machines à vapeur, et la locomotive, révolutionnèrent la façon dont l'Homme pensait son environnement proche, et sa manière de commercer."
                         this.title.innerHTML = 'Locomotive'
                         this.animatedNumber.style.display='none'
+                        this.text2.style.display = 'none'
                         this.addingContents(this.materials, this.picture)
                         this.addingContents(this.materials, this.explaination)
                     }, 400)
@@ -61,22 +64,24 @@ export default class InPageContainer {
                         this.title.innerHTML = 'Industries'
                         this.animatedNumber.style.display='block'
                         this.count.upingNumbers(150)
+                        this.chart.style.display = 'block'
+                        this.text2.style.display = 'none'
                         this.addingContents(this.materials, this.picture)
                         this.addingContents(this.materials, this.explaination)
                     }, 400)
 
                     window.setTimeout(() => {
-                        chartDraw(data2)
                         this.picture.style.transform = 'translateX(-5%) translateY(20%) scale(0.9)'
                         this.explaination.style.transform = 'translateX(0%) translateY(17.5%)'
                         this.currentContents=3
-                        quoteTime=true
+                        this.quoteTime=true
                         this.currentPannels=1
+                        chartDraw(data1)
                     }, 600)
                 }
             }
 
-            if(quoteTime===true) {
+            if(this.quoteTime===true) {
                 this.quoteBlock.style.display='flex'
                 this.materials.style.transform='scale(3)'
                 this.materials.style.opacity='0'
@@ -91,6 +96,11 @@ export default class InPageContainer {
 
                 if (this.currentContents===8) {
                     this.quoteText.innerHTML="L’utilisation des machines (radio, télévision) permis aux médias d’agrandir leur audience et in fine, leur impact. <br> <br> Leur impact économique fut énorme car ces nouveaux supports révolutionnèrent le marketing et la publicité, incitant à la consommation de masse, qui apparut durant les Trente Glorieuses. Malgré cela, ces outils permirent aussi de créer un différent type de propagande, néfaste aux libertés fondamentales de l’Homme."
+
+                    window.setTimeout(() => {
+                        this.animatedNumber2.style.display = 'none'
+                        this.text2.style.display = 'none'
+                    }, 600)
                 }
                 if (this.currentContents===10) {
                     this.quoteText.innerHTML="La robotique et l'intelligence artificielle prennent une part de plus en plus conséquente dans les économies aujourd'hui. Cette tendance devrait s’accélérer avec l’arrivée de machines de plus en plus autonomes, intelligentes et interconnectées, les robots. Le rôle de l’homme devrait alors se limiter au contrôle, à la surveillance et à la maintenance de ces machines. <br> Comment vont s'affirmer ces technologiques dans le modèle économique de demain ?"
@@ -101,7 +111,7 @@ export default class InPageContainer {
                 }, 50)
             }
 
-            if(this.currentPannels===1 && quoteTime===false) {
+            if(this.currentPannels===1 && this.quoteTime===false) {
                 this.picture.style.transition = '0.4s ease-in-out'
                 this.picture.style.transform = 'translateX(-100%) translateY(20%) scale(0.9)'
                 this.explaination.style.transition = 'all 0.3s ease-in-out'
@@ -113,28 +123,13 @@ export default class InPageContainer {
                        this.removingContents(this.materials, this.explaination)
                        this.picture.setAttribute('src', '../assets/picture/avionGuerre.png')
                        this.text.innerHTML = "L’apparition et l’avancée technologique de l’aviation transforma profondément les échanges et les combats au cours du XXème siècle.     L’impact économique en fut d’autant plus grand."
-                       this.title.innerHTML = 'Aviation civile'
-                       this.addingContents(this.materials, this.picture)
-                       this.addingContents(this.materials, this.explaination)
-                   }, 400)
-
-                   window.setTimeout(() => {
-                       this.picture.style.transform = 'translateX(-5%) translateY(20%) scale(0.9)'
-                       this.explaination.style.transform = 'translateX(0%) translateY(17.5%)'
-                       this.currentContents=5
-                   }, 600)
-                }
-
-                if(this.currentContents===4) {
-                   window.setTimeout(() => {
-                       this.removingContents(this.materials, this.picture)
-                       this.removingContents(this.materials, this.explaination)
-                       this.picture.setAttribute('src', '../assets/picture/avionGuerre.png')
-                       this.text.innerHTML = "L’apparition et l’avancée technologique de l’aviation transforma profondément les échanges et les combats au cours du XXème siècle.     L’impact économique en fut d’autant plus grand."
                        this.title.innerHTML = 'Aviation'
+                       this.chart.style.display = 'none'
+                       this.text2.style.display = 'none'
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
                    }, 400)
+
                    window.setTimeout(() => {
                        this.picture.style.transform = 'translateX(-5%) translateY(20%) scale(0.9)'
                        this.explaination.style.transform = 'translateX(0%) translateY(17.5%)'
@@ -151,6 +146,8 @@ export default class InPageContainer {
                        this.count.upingNumbers(5000)
                        this.text.innerHTML = "opérations par seconde. C'est ce qu'était capable d'effectuer Collossus, une machine parue à la même période que Bombe, qui a été utilisé pour décrypter Enigma. La Seconde Guerre Mondiale a permis à l'informatique de prendre son envol, portée par l'effort de guerre, et la cryptographie."
                        this.title.innerHTML = `L'électronique`
+                       this.chart.style.display = 'none'
+                       this.text2.style.display = 'none'
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
                    }, 400)
@@ -161,11 +158,11 @@ export default class InPageContainer {
                        this.currentContents=6
                        this.currentPannels=2
                    }, 600)
-                   quoteTime=true
+                   this.quoteTime=true
                 }       
             }
 
-            if(quoteTime===false) {
+            if(this.quoteTime===false) {
                 this.picture.style.transition = '0.4s ease-in-out'
                 this.picture.style.transform = 'translateX(-100%) translateY(20%) scale(0.9)'
                 this.explaination.style.transition = 'all 0.3s ease-in-out'
@@ -178,8 +175,13 @@ export default class InPageContainer {
                        this.picture.setAttribute('src', '../assets/picture/avionCargo.png')
                        this.animatedNumber.style.display='block'
                        this.count.upingNumbers(62000)
+                       this.animatedNumber2.style.display = 'block'
+                       this.count.upingNumbers2(10200000)
+                       this.text2.style.display = 'block'
                        this.text.innerHTML = " tonnes, c'est la quantité de fret aérien transportée en 2017.Cela représente 95,9 milliards de $."
-                       this.title.innerHTML = 'Aviation'
+                       this.text2.innerHTML = "en 2016, c'est le nombre de personnes qu'emploie le secteur de l'aviation."
+                       this.title.innerHTML = 'Aviation civile'
+                       this.chart.style.display = 'none'
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
                    }, 400)
@@ -190,7 +192,7 @@ export default class InPageContainer {
                        this.currentContents=8
                        this.currentPannels=3
                    }, 600)
-                   quoteTime=true      
+                   this.quoteTime=true      
                 }
 
                 if(this.currentContents===9) {
@@ -200,10 +202,12 @@ export default class InPageContainer {
                        this.picture.setAttribute('src', '../assets/picture/television.png')
                        this.animatedNumber.style.display='none'
                        this.title.innerHTML = 'Télévision'
-                       this.text.innerHTML="placeholder en attendant le deuxième graph"
+                       this.text.innerHTML=""
+                       this.text2.style.display = 'none'
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
                        chartDraw(data5)
+                       chartDraw2(data6)
                    }, 400)
 
                    window.setTimeout(() => {
@@ -212,7 +216,7 @@ export default class InPageContainer {
                        this.currentContents=10
                        this.currentPannels=4
                    }, 600)
-                   quoteTime=true      
+                   this.quoteTime=true      
                 }
 
                 if(this.currentContents===11) {
@@ -225,6 +229,8 @@ export default class InPageContainer {
                        this.picture.setAttribute('src', '../assets/picture/planete2.png')
                        this.text.innerHTML = "pourcents de moins, c'est en moyenne la différence de prix entre un produit acheté en ligne ou dans un magasin physique. Internet contribue au pouvoir d'achat de ses utilisateurs."
                        this.title.innerHTML = `Internet dans l'économie`
+                       this.chart.style.display = 'none'
+                       this.text2.style.display = 'none'
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
                    }, 400)
@@ -235,7 +241,7 @@ export default class InPageContainer {
                        this.currentContents=12
                        this.currentPannels=5
                    }, 600)
-                   quoteTime=true      
+                   this.quoteTime=true      
                 }
 
                 if(this.currentContents===12) {
@@ -246,8 +252,11 @@ export default class InPageContainer {
                        this.animatedNumber.style.display='block'
                        this.title.innerHTML = `L'IA`
                        this.count.upingNumbers(61)
+                       this.count.upingNumbers2(150)
                        this.picture.setAttribute('src', '../assets/picture/future.png')
-                       this.text.innerHTML = `pourcents des entreprises utilisent l'intelligence artificielle pour identifier des opportunités qu'ils auraient probablement ratés.`
+                       this.text.innerHTML = "pourcents des entreprises utilisent l'intelligence artificielle pour identifier des opportunités qu'ils auraient probablement ratés."
+                       this.text2.style.display = 'block'
+                       this.text2.innerHTML = "milliards de $ par an, c'est ce que les applications médicales utilisant l'intelligence artificielle devraient permettre aux Etats-Unis d'économiser d'ici 2026"
                        this.addingContents(this.materials, this.picture)
                        this.addingContents(this.materials, this.explaination)
                    }, 400)
@@ -258,34 +267,34 @@ export default class InPageContainer {
                        this.currentContents=13
                        this.currentPannels=6
                    }, 600)
-                   quoteTime=true      
+                   this.quoteTime=true      
                 }
             }
         })
 
 
         this.quoteBlock.addEventListener('click', () => {
-            if(beginExperience===0) {
+            if(this.beginExperience===0) {
                 this.quoteText.style.opacity="0"
 
                 window.setTimeout(() => {
                     this.quoteText.innerHTML="Comment la relation Homme et la machine s'est-elle articulée au fil des ciels dans les économies humaines ?"
                     this.quoteText.style.opacity= '1'
-                    beginExperience=1
+                    this.beginExperience=1
                 }, 300)
             }
 
-            if(beginExperience===1) {
+            if(this.beginExperience===1) {
                 this.quoteText.style.opacity= '0'
 
                 window.setTimeout(() => {
                     this.quoteText.innerHTML="La révolution industrielle a vu le jour en Angleterre à la fin du XVIIIe siècle avec la machine à vapeur mise au point par James Watt et a conduit au début du machinisme. L’industrie textile a ainsi pu se développer, passant d’une production artisanale à une production mécanisée. <br> <br> Cela a permis d’augmenter le rendement et de faire baisser les coûts de production. L’homme maîtrisait alors la machine et l’utilisait selon ses propres méthodes pour transformer la matière première et maximiser son savoir-faire."
                     this.quoteText.style.opacity="1"
-                    beginExperience=2
+                    this.beginExperience=2
                 }, 300)            
             }
 
-            if(beginExperience===2) {
+            if(this.beginExperience===2) {
                 this.quoteBlock.style.opacity='0'
 
                 window.setTimeout(() => {
@@ -295,7 +304,9 @@ export default class InPageContainer {
 
                 window.setTimeout(() => {
                     this.quoteBlock.style.display="none"
-                    beginExperience=3
+                    this.animatedNumber.style.display = 'block'
+                    this.count.upingNumbers(50)
+                    this.beginExperience=3
                 }, 500)            
             }
 
@@ -314,6 +325,8 @@ export default class InPageContainer {
                     this.title.innerHTML = 'Chars'
                     this.addingContents(this.materials, this.picture)
                     this.addingContents(this.materials, this.explaination)
+                    this.chart.style.display = 'none'
+                    this.text2.style.display = 'none'
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
                 }, 300)
@@ -342,8 +355,10 @@ export default class InPageContainer {
                     this.picture.setAttribute('src', '../assets/picture/avionCivile.png')
                     this.text.innerHTML = "milliards de $, c'est la valeur créée directement et indirectement par le secteur de l'aviation en 2016, soit 3,6% du PIB mondial."
                     this.title.innerHTML = 'Aviation civile'
+                    this.chart.style.display = 'block'
                     this.addingContents(this.materials, this.picture)
                     this.addingContents(this.materials, this.explaination)
+                    this.text2.style.display = 'none'
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
                     chartDraw(data3)
@@ -374,8 +389,10 @@ export default class InPageContainer {
                     this.picture.setAttribute('src', '../assets/picture/radio.png')
                     this.text.innerHTML = "dollars, c'est le montant dépensé dans des publicités radiophoniques en 1949, créant des milliers d'emplois dans le secteur. La radio révolutionna les codes du marketing, offrant un support de communication de masse."
                     this.title.innerHTML = 'Radio'
+                    this.chart.style.display = 'block'
                     this.addingContents(this.materials, this.picture)
                     this.addingContents(this.materials, this.explaination)
+                    this.text2.style.display = 'none'
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
                     chartDraw(data4)
@@ -391,7 +408,7 @@ export default class InPageContainer {
                     this.quoteBlock.style.display='none'
                 }, 500)
             }
-            quoteTime=false
+            this.quoteTime=false
 
             if(this.currentContents===10) {
                 this.materials.style.transform='scale(0)'
@@ -406,6 +423,8 @@ export default class InPageContainer {
                     this.animatedNumber.style.display='block'
                     this.count.upingNumbers(21)
                     this.text.innerHTML = "pourcents de l'augmentation du PIB dans les économies matures découle d'Internet. C'est aujourd'hui un des secteurs qui recrute le plus."
+                    this.count.upingNumbers2(22)
+                    this.text2.innerHTML = "milliards de $ d'échanges ont lieu chaque jour au travers du e-commerce."
                     this.title.innerHTML = `Internet dans l'économie`
                     this.addingContents(this.materials, this.picture)
                     this.addingContents(this.materials, this.explaination)
@@ -422,7 +441,7 @@ export default class InPageContainer {
                     this.quoteBlock.style.display='none'
                 }, 500)
             }
-            quoteTime=false
+            this.quoteTime=false
 
             if(this.currentContents===11) {
                 this.materials.style.transform='scale(0)'
@@ -437,9 +456,15 @@ export default class InPageContainer {
                     this.animatedNumber.style.display='block'
                     this.count.upingNumbers(55)
                     this.text.innerHTML = "milliards d'euros. C'est ce que devrait valoir le marché de la robotique en 2025. L'utilisation de la robotique dans le domaine médical devrait augmenter de 50% en 2019."
-                    this.title.innerHTML = `La robotique`
+                    this.animatedNumber2.style.display = 'block'
+                    this.count.upingNumbers2(50)
+                    this.text2.style.display = 'block'
+                    this.text2.innerHTML = "pourcents, c'est l'utilisation prévisionnelle de la robotique dans le domaine médical en 2019."
+                    this.title.innerHTML = 'La robotique'
                     this.addingContents(this.materials, this.picture)
                     this.addingContents(this.materials, this.explaination)
+                    this.chart.style.display = 'none'
+                    this.chart2.style.display = 'none'
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
                 }, 300)
@@ -453,7 +478,7 @@ export default class InPageContainer {
                     this.quoteBlock.style.display='none'
                 }, 500)
             }
-            quoteTime=false
+            this.quoteTime=false
         })
     }
 

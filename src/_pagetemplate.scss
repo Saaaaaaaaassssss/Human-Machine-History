@@ -35,10 +35,10 @@
             display: flex;
             flex-direction: column;
     
-            .number-1 {
+            .number-1, .number-2 {
                 font-size: 2.5em;
                 font-family: 'WorkSans', Arial, Helvetica, sans-serif;
-                color: gray;
+                color: white;
             }
     
             .date-title-1 {
@@ -55,6 +55,10 @@
                 line-height: 35px;
                 text-align: start;
                 color: white;
+            }
+
+            .text-2 {
+                display: none;
             }
 
             .ct-chart-1 {
