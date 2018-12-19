@@ -1,7 +1,7 @@
 .global-container {
     .title-1 {
         position: relative;
-        width: 15%;
+        width: 100%;
         top: 8%;
         left: 5%;
         padding: 0;
@@ -40,7 +40,6 @@
                 font-family: 'WorkSans', Arial, Helvetica, sans-serif;
                 color: white;
             }
-    
             .date-title-1 {
                 text-align: start;
                 font-family: 'WorkSans', Arial, Helvetica, sans-serif;
@@ -56,13 +55,22 @@
                 text-align: start;
                 color: white;
             }
+            .text-1
+            {
+                margin-bottom: 5%;
+            }
 
             .text-2 {
                 display: none;
             }
 
             .ct-chart-1 {
-                margin-top: 10%;
+                margin-top: 4%;
+            }
+            .comments {
+                color:white;
+                font-size: 1.2em;
+                font-family: 'Raleway', Arial, Helvetica, sans-serif;
             }
         }
     }
