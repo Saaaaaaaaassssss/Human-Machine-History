@@ -4,7 +4,7 @@ body
     {
         .menu-flex
         {
-            background-image: url('../assets/picture/background.png');
+            background-image: url('../assets/picture/bgMenu.svg');
             background-size:cover;
             display:none;
             flex-direction: row;
@@ -17,8 +17,10 @@ body
                 height:100vh;
                 width:calc(100vw/6);
                 transform:skew(10deg);
-                transition: all  0.3s ease-in;
+                transition: all  0.1s ease-in-out;
                 background-repeat: no-repeat;
+                border-right: 2px solid black;
+                box-shadow: 0px 1px 1px 0px black;
             }
             // .menu-slider-1, .menu-slider-2, .menu-slider-3, .menu-slider-4, .menu-slider-5, .menu-slider-6
             // {
@@ -29,10 +31,10 @@ body
                 background-image: url('../assets/picture/bgMenu1.svg');
                 background-size: 90vh;
                 background-position-y: 300px;
-                background-position-x: -50px;
+                background-position-x: -100px;
                 &:hover
                 {
-                    background-position-x: -100px;
+                    background-position-x: -50px;
                 }
             }
             .menu-slider-2
@@ -40,10 +42,10 @@ body
                 background-image: url('../assets/picture/bgMenu2.svg');
                 background-size: 90vh;
                 background-position-y: 150px;
-                background-position-x: -300px;
+                background-position-x: -400px;
                 &:hover
                 {
-                    background-position-x: -400px;
+                    background-position-x: -350px;
                 }
             }
             .menu-slider-3
@@ -51,10 +53,10 @@ body
                 background-image: url('../assets/picture/bgMenu3.svg');
                 background-size: 90vh;
                 background-position-y: 150px;
-                background-position-x: -250px;
+                background-position-x: -260px;
                 &:hover
                 {
-                    background-position-x: -150px;
+                    background-position-x: -210px;
                 }
             }
             .menu-slider-4
@@ -62,9 +64,10 @@ body
                 background-image: url('../assets/picture/bgMenu4.svg');
                 background-size: 90vh;
                 background-position-y: 220px;
+                background-position-x: -300px;
                 &:hover
                 {
-                    background-position-x: -50px;
+                    background-position-x: -250px;
                 }
             }
             .menu-slider-5
@@ -72,9 +75,10 @@ body
                 background-image: url('../assets/picture/bgMenu5.svg');
                 background-size: 90vh;
                 background-position-y: 80px;
+                background-position-x: -450px;
                 &:hover
                 {
-                    background-position-x: -50px;
+                    background-position-x: -400px;
                 }
             }
             .menu-slider-6
@@ -82,10 +86,10 @@ body
                 background-image: url('../assets/picture/bgMenu6.svg');
                 background-size: 90vh;
                 background-position-y: 0px;
-                background-position-x: -100px;
+                background-position-x: -300px;
                 &:hover
                 {
-                    background-position-x: -50px;
+                    background-position-x: -260px;
                 }
             }
         }
