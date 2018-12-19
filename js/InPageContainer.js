@@ -1,5 +1,6 @@
 import Count from './CountUp.js'
 let quoteTime=false
+let beginExperience=0
 export default class InPageContainer {
     constructor() {
         this.materials = document.querySelector('.materials-1')
@@ -14,6 +15,7 @@ export default class InPageContainer {
         this.animatedNumber = document.querySelector('.number-1')
         this.animatedNumber2 = document.querySelector('.number-2')
         this.quoteBlock = document.querySelector('.quote')
+        this.quoteText = document.querySelector('.quote-text')
         this.state = true
         this.currentContents = 1
         this.currentPannels = 0
@@ -75,6 +77,22 @@ export default class InPageContainer {
                 this.quoteBlock.style.display='flex'
                 this.materials.style.transform='scale(3)'
                 this.materials.style.opacity='0'
+                if(this.currentContents===3)
+                {
+                    this.quoteText.innerHTML="Les deux guerres mondiales ont changé drastiquement la relation entre les hommes et les machines. L’arrivée des chars et des avions, ainsi que les prémices de l’informatique, initièrent ce mouvement. <br> <br>Ces progrès aggravèrent ces conflits et les rendirent meurtriers. Malgré cela, ils permirent aux hommes de profiter de boom économiques et de faciliter leur quotidien."
+                }
+                if(this.currentContents===6)
+                {
+                    this.quoteText.innerHTML="Après les deux guerres mondiales, les avancées technologiques émises pendant ces conflits arrivèrent dans le domaine civil. <br> <br> Par exemple, les progrès dans le domaine de l’aéronautique facilitèrent les échanges et les déplacements des hommes dans le monde. Cependant, ces progrès créerent plus de problèmes environnementaux, notamment de pollution."
+                }
+                if(this.currentContents===8)
+                {
+                    this.quoteText.innerHTML="L’utilisation des machines (radio, télévision) permis aux médias d’agrandir leur audience et in fine, leur impact. <br> <br> Leur impact économique fut énorme car ces nouveaux supports révolutionnèrent le marketing et la publicité, incitant à la consommation de masse, qui apparut durant les Trente Glorieuses. Malgré cela, ces outils permirent aussi de créer un différent type de propagande, néfaste aux libertés fondamentales de l’Homme."
+                }
+                if(this.currentContents===10)
+                {
+                    this.quoteText.innerHTML="La robotique et l'intelligence artificielle prennent une part de plus en plus conséquente dans les économies aujourd'hui. Cette tendance devrait s’accélérer avec l’arrivée de machines de plus en plus autonomes, intelligentes et interconnectées, les robots. Le rôle de l’homme devrait alors se limiter au contrôle, à la surveillance et à la maintenance de ces machines. <br> Comment vont s'affirmer ces technologiques dans le modèle économique de demain ?"
+                }
                 window.setTimeout(() => {
                     this.quoteBlock.style.opacity='1'
                 }, 50)
@@ -239,6 +257,37 @@ export default class InPageContainer {
 
         this.quoteBlock.addEventListener('click', () => 
         {
+            if(beginExperience===0)
+            {
+                this.quoteText.style.opacity="0"
+                window.setTimeout(() => {
+                    this.quoteText.innerHTML="Comment la relation Homme et la machine s'est-elle articulée au fil des ciels dans les économies humaines ?"
+                    this.quoteText.style.opacity="1"
+                    beginExperience=1
+                }, 300)
+
+            }
+            if(beginExperience===1)
+            {
+                this.quoteText.style.opacity="0"
+                window.setTimeout(() => {
+                    this.quoteText.innerHTML="La révolution industrielle a vu le jour en Angleterre à la fin du XVIIIe siècle avec la machine à vapeur mise au point par James Watt et a conduit au début du machinisme. L’industrie textile a ainsi pu se développer, passant d’une production artisanale à une production mécanisée. <br> <br> Cela a permis d’augmenter le rendement et de faire baisser les coûts de production. L’homme maîtrisait alors la machine et l’utilisait selon ses propres méthodes pour transformer la matière première et maximiser son savoir-faire."
+                    this.quoteText.style.opacity="1"
+                    beginExperience=2
+                }, 300)            
+            }
+            if(beginExperience===2)
+            {
+                this.quoteBlock.style.opacity='0'
+                window.setTimeout(() => {
+                    this.materials.style.transform='scale(1)'
+                    this.materials.style.opacity='1'
+                }, 300)            
+                window.setTimeout(() => {
+                    this.quoteBlock.style.display="none"
+                    beginExperience=3
+                }, 500)            
+            }
             if(this.currentContents===3)
             {
                 this.materials.style.transform='scale(0)'
