@@ -25,6 +25,10 @@
   .ct-label {
     color:white;
     font-size:1em;
-
   }
+}
+
+foreignObject, span {
+  height: 45px !important;
+  width: 50px !important;
 }

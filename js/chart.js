@@ -1,6 +1,11 @@
 let options = {
   width: 700,
-  height: 230
+  height: 230,
+  axisTitle: "bite",
+  axisClass: "ct-axis-title",
+  offset: { x: 10, y: 30 },
+  textAnchor: "middle",
+  flipTitle: false
 }
 
 let data = {
@@ -11,9 +16,9 @@ let data = {
 }
 
 let data1 = {
-  labels: ['1911','1921'],
+  labels: ['1911','1870'],
   series: [
-    [7.72, 8.61]
+    [36000, 1000000]
   ]
 }
 
