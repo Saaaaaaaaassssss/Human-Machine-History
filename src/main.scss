@@ -1,10 +1,4 @@
-@import 'pageone';
-@import 'pagetwo';
-@import 'pagethree';
-@import 'pagefour';
-@import 'pagefive';
-@import 'pagesix';
-@import 'pageseven';
+@import 'pagetemplate';
 @import 'chart';
 
 @font-face {
@@ -38,8 +32,8 @@ body {
         flex-direction: row;
         align-items: center;
         bottom: 10%;
-        &:hover
-        {
+
+        &:hover {
             cursor: pointer;
         }
 
@@ -56,8 +50,8 @@ body {
             margin-right: 1vw;
         }
     }
-    .quote
-    {
+
+    .quote {
         position:fixed;
         display:flex;
         background:black;
@@ -72,8 +66,7 @@ body {
         justify-content: center;
         flex-direction:column;
         
-        .quote-text
-        {
+        .quote-text {
             position: relative;
             font-family: 'Raleway', Arial, Helvetica, sans-serif;            
             font-size: 2em;
@@ -83,39 +76,80 @@ body {
             transition : all 0.3s ease-in-out;
         }
 
-        .quote-circle
-        {
+        .quote-circle {
             position: absolute;
-            bottom:10%;
             margin: 0 auto;
             border-radius:50%;
-            background:white;
-            animation: quoteCircleAnim 2s infinite;
-            @keyframes quoteCircleAnim
-            {
-                0%{opacity:0;transform:scale(1)}
-                50%{opacity:1;transform:scale(1.2)}
-                100%{opacity:0;transform:scale(1)}
-            }
+            background:black;
         }
-        .quote-circle-1
-        {
+
+        .quote-circle-1 {
+            z-index: 3;
             width:50px;
             height:50px;
-            background-color:red;
-        }
-        .quote-circle-2
-        {
-            width:60px;
-            height:60px;
+            bottom:10%;
+            border: 2px solid gray;
+            animation: circle1 2s infinite;
 
-            animation-delay:1s;
+            @keyframes circle1 {
+                0% {opacity: 0;}
+                10% {opacity: 1;}
+                20% {opacity: 1;}
+                30% {opacity: 1;}
+                40% {opacity: 1;}
+                50% {opacity: 1;}
+                60% {opacity: 1;}
+                70% {opacity: 1;}
+                80% {opacity: 1;}
+                90% {opacity: 1;}
+                100% {opacity: 0;}
+            }
         }
-        .quote-circle-3
-        {
-            width:70px;
-            height:70px;
-            animation-delay:2s;
+
+        .quote-circle-2 {
+            z-index: 2;
+            width:75px;
+            height:75px;
+            bottom:9.5%;
+            border: 2px solid wheat;
+            animation: circle2 2s infinite;
+
+            @keyframes circle2 {
+                0% {opacity: 0;}
+                10% {opacity: 0;}
+                20% {opacity: 0;}
+                30% {opacity: 1;}
+                40% {opacity: 1;}
+                50% {opacity: 1;}
+                60% {opacity: 1;}
+                70% {opacity: 1;}
+                80% {opacity: 0;}
+                90% {opacity: 0;}
+                100% {opacity: 0;}
+            }
+        }
+
+        .quote-circle-3 {  
+            z-index: 1;
+            width:100px;
+            height:100px;
+            bottom: 9%;
+            border: 2px solid white;
+            animation: circle3 2s infinite;
+
+            @keyframes circle3 {
+                0% {opacity: 0;}
+                10% {opacity: 0;}
+                20% {opacity: 0;}
+                30% {opacity: 0;}
+                40% {opacity: 1;}
+                50% {opacity: 1;}
+                60% {opacity: 1;}
+                70% {opacity: 0;}
+                80% {opacity: 0;}
+                90% {opacity: 0;}
+                100% {opacity: 0;}
+            }
         }
     }
 }
