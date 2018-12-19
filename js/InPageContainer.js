@@ -3,6 +3,7 @@ let quoteTime=false
 let beginExperience=0
 export default class InPageContainer {
     constructor() {
+        this.container = document.querySelector('.global-container')
         this.materials = document.querySelector('.materials-1')
         this.picture = document.querySelector('.template-picture-1')
         this.explaination = document.querySelector('.explaination-1')
@@ -333,6 +334,7 @@ export default class InPageContainer {
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
                     chartDraw(data3)
+                    this.container.style.backgroundImage = "url('../assets/picture/backgroundNuage.png')" 
                 }, 300)
                 window.setTimeout(() => {
                     this.picture.style.transform = 'translateX(-5%) translateY(20%) scale(0.9)'
@@ -361,6 +363,7 @@ export default class InPageContainer {
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
                     chartDraw(data4)
+                    this.container.style.backgroundImage = "url('../assets/picture/background.png')" 
                 }, 300)
                 window.setTimeout(() => {
                     this.picture.style.transform = 'translateX(-5%) translateY(20%) scale(0.9)'

@@ -1,3 +1,8 @@
+let options = {
+  width: 700,
+  height: 230
+}
+
 let data = {
     labels: ['1870','1880', '1890', '1900'],
     series: [
@@ -37,11 +42,10 @@ let data5 = {
 
 let chartDraw = (_data) =>
 {
-  new Chartist.Line('.ct-chart-1', _data)
+  new Chartist.Line('.ct-chart-1', _data, options)
 
 }
 
 
-new Chartist.Line('.ct-chart-1', data)
-
+new Chartist.Line('.ct-chart-1', data, options)
 
