@@ -346,6 +346,7 @@ export default class InPageContainer {
                 this.quoteBlock.style.opacity='0'
                 this.time.innerHTML='Retombées technologiques'
                 this.currentContents=7
+                this.container.style.backgroundImage = "url('../assets/picture/backgroundNuage.png')" 
 
                 window.setTimeout(() => {
                     this.removingContents(this.materials, this.picture)  
@@ -362,7 +363,6 @@ export default class InPageContainer {
                     this.materials.style.transform='scale(1)'
                     this.materials.style.opacity='1'
                     chartDraw(data3)
-                    this.container.style.backgroundImage = "url('../assets/picture/backgroundNuage.png')" 
                 }, 300)
 
                 window.setTimeout(() => {
