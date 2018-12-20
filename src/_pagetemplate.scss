@@ -31,6 +31,17 @@
         font-size: 1.5em;
         transition: 0.4s ease-in;
     }
+    .menu-button {
+
+        position: fixed;
+        width:2.5%;
+        top:3%;
+        left:1.5%;
+        display:flex;
+        justify-content: flex-end;
+        z-index:3;
+        transition: 0.3s ease-in-out;
+    }
 
     .materials-1 {
         display: flex;

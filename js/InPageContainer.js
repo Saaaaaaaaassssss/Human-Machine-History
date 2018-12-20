@@ -21,6 +21,7 @@ export default class InPageContainer {
         this.sourcesButton = document.querySelector('.sources-button')
         this.sources = document.querySelector('.sources')
         this.sourcesExitButton = document.querySelector('.sources-exit')
+        this.menuButton = document.querySelector('.menu-button')
         this.menu = document.querySelector('.menu-flex')
         this.menuSlider1 = document.querySelector('.menu-slider-1')
         this.menuSlider2 = document.querySelector('.menu-slider-2')
@@ -51,6 +52,7 @@ export default class InPageContainer {
         this.count = new Count()
         this.changingCurrentsMaterials()
         this.muted = false
+        this.menuOpen = false
     }
 
     changingCurrentsMaterials() {
@@ -598,6 +600,22 @@ export default class InPageContainer {
                     this.volumeButton.setAttribute('src', '../assets/picture/soundMuted.png')
                     this.volumeButton.style.opacity='1'
                 }, 100)
+            }
+        })
+        this.menuButton.addEventListener('click', () =>{
+            if(this.menuOpen){
+                this.menuOpen=false
+                this.menu.style.transform="translateX(-105%)"
+                window.setTimeout(()=> {
+                    this.menu.style.display="none"
+                },600)    
+            }
+            else{
+                this.menuOpen=true
+                this.menu.style.display="flex"
+                window.setTimeout(()=> {
+                    this.menu.style.transform="translateX(0)"
+                },50)    
             }
         })
     }
