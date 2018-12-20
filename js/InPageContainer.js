@@ -253,7 +253,7 @@ export default class InPageContainer {
 						this.text.innerHTML =
 							" tonnes, c’est la quantité de fret aérien transportée en 2017. Cela représentait 95,9 milliards de $."
 						this.text2.innerHTML =
-							"C’est le nombre de personnes qu'emploie le secteur de l'aviation en 2016."
+							"C’est le nombre de personnes qu'emploie le secteur de l'aviation en 2F016."
 						this.title.innerHTML = "Aviation de fret"
 						this.chart.style.display = "none"
 						this.chart2.style.display = "none"
@@ -394,7 +394,7 @@ export default class InPageContainer {
 
 				window.setTimeout(() => {
 					this.quoteText.innerHTML =
-						"Comment la relation Homme et la machine s'est-elle articulée au fil des ciels dans les économies humaines ?"
+						"Comment la relation entre l'Homme et la machine s'est-elle articulée au fil des siècles dans les économies humaines ?"
 					this.quoteText.style.opacity = "1"
 					this.beginExperience = 1
 				}, 300)

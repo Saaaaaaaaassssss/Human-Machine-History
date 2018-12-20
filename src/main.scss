@@ -198,15 +198,12 @@ body {
         }
         .sources-exit {
             position: fixed;
-            width:50%;
+            width:3%;
             top:3%;
             right:1.5%;
             display:flex;
             justify-content: flex-end;
             z-index:2;
-            img {
-                width: 5%;
-            }
         }
     }
 }
