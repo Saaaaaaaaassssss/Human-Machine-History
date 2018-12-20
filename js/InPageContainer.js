@@ -52,6 +52,7 @@ export default class InPageContainer {
 		this.changingCurrentsMaterials()
 		this.muted = false
 		this.menuOpen = false
+		this.image1 = new Image ("../assets/picture/avionCargo.png")
 	}
 
 	changingCurrentsMaterials() {
