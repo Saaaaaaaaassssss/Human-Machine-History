@@ -394,7 +394,6 @@ export default class InPageContainer {
                 this.time.innerHTML='Retombées scientifiques'
                 this.currentContents=7
                 this.container.style.backgroundImage = "url('../assets/picture/backgroundNuage.png')" 
-                chartDraw(data3)
 
                 window.setTimeout(() => {
                     this.removingContents(this.materials, this.picture)  
@@ -412,18 +411,13 @@ export default class InPageContainer {
                     this.materials.style.opacity='1'
                     this.comments.style.display = 'block'
                     this.comments.innerHTML = "Nombre de passagers aériens par an, en millions."
-                    this.songStart(this.sound7)
-                    
+                    this.songStart(this.sound7)                   
                 }, 300)
-
+                
                 window.setTimeout(() => {
-                    this.picture.style.transform = 'translateX(-5%) translateY(20%) scale(0.9)'
-                    this.explaination.style.transform = 'translateX(0%) translateY(17.5%)'
-                }, 600)
-
-                window.setTimeout(() => {
+                    chartDraw(data3)
                     this.quoteBlock.style.display='none'
-                }, 500)
+                }, 600)
             }
 
             if(this.currentContents===8) {
@@ -580,6 +574,12 @@ export default class InPageContainer {
             this.menu.style.transform='translateX(-105%)'
             this.currentContents=3
             this.currentPannels=1
+            this.quoteTimeGenerator()
+        })
+        this.menuSlider3.addEventListener('click', () => {
+            this.menu.style.transform='translateX(-105%)'
+            this.currentContents=6
+            this.currentPannels=2
             this.quoteTimeGenerator()
         })
         this.menuSlider4.addEventListener('click', () => {
