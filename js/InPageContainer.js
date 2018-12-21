@@ -197,7 +197,7 @@ export default class InPageContainer {
 						this.picture.setAttribute("src", "../assets/picture/enigma.png")
 						this.count.upingNumbers(5000)
 						this.text.innerHTML =
-							"opérations par seconde. C'est ce qu'était capable d'effectuer Collossus, une machine parue à la même période que Bombe, qui a été utilisé pour décrypter Enigma. La Seconde Guerre Mondiale a permis à l'informatique de prendre son envol, portée par l'effort de guerre, et la cryptographie."
+							"opérations par seconde. C'est ce qu'était capable d'effectuer Collossus, une machine parue à la même période que Bombe, qui a été utilisé pour décrypter Enigma."
 						this.text2.innerHTML =
 							"La Seconde Guerre Mondiale a permis à l'informatique de prendre son envol, portée par l'effort de guerre, et la cryptographie."
 						this.title.innerHTML = `Informatique`
@@ -253,7 +253,7 @@ export default class InPageContainer {
 						this.text.innerHTML =
 							" tonnes, c’est la quantité de fret aérien transportée en 2017. Cela représentait 95,9 milliards de $."
 						this.text2.innerHTML =
-							"C’est le nombre de personnes qu'emploie le secteur de l'aviation en 2F016."
+							"C’est le nombre de personnes qu'emploie le secteur de l'aviation en 2016."
 						this.title.innerHTML = "Aviation de fret"
 						this.chart.style.display = "none"
 						this.chart2.style.display = "none"
@@ -322,7 +322,7 @@ export default class InPageContainer {
 						this.count.upingNumbers2(22)
 						this.picture.setAttribute("src", "../assets/picture/planete1.png")
 						this.text.innerHTML =
-							"pour cent, elle représente l'augmentation du PIB dans les économies matures qui découle d'Internet. C'est aujourd'hui un des secteurs qui recrute le plus."
+							"pour cent, cela représente l'augmentation du PIB dans les économies matures qui découle d'Internet. C'est aujourd'hui un des secteurs qui recrute le plus."
 						this.text2.innerHTML =
 							"milliards de dollars d'échanges ont lieu chaque jour au travers du e-commerce. <br> 10% de moins, c'est en moyenne la différence de prix entre un produit acheté en ligne ou dans un magasin physique."
 						this.title.innerHTML = "Internet"
@@ -361,7 +361,7 @@ export default class InPageContainer {
 						this.count.upingNumbers2(150)
 						this.picture.setAttribute("src", "../assets/picture/ia.png")
 						this.text.innerHTML =
-							"pour cent des entreprises utilisent l'intelligence artificielle pour identifier des opportunités qu'ils auraient probablement ratés."
+							"pour cent des entreprises utilisent l'intelligence artificielle pour identifier des opportunités qu'elles auraient probablement ratées."
 						this.text.style.display = "block"
 						this.text2.style.display = "block"
 						this.chart.style.display = "none"
@@ -571,7 +571,7 @@ export default class InPageContainer {
 					this.animatedNumber2.style.display = "block"
 					this.count.upingNumbers(55)
 					this.text.innerHTML =
-						"milliards d'euros. C'est ce que devrait valoir le marché de la robotique en 2025. L'utilisation de la robotique dans le domaine médical devrait augmenter de 50% en 2019."
+						"milliards d'euros. C'est ce que devrait valoir le marché de la robotique en 2025."
 					this.count.upingNumbers2(50)
 					this.text.style.display = "block"
 					this.text2.style.display = "block"
@@ -746,7 +746,7 @@ export default class InPageContainer {
 			this.count.upingNumbers2(22)
 			this.picture.setAttribute("src", "../assets/picture/planete1.png")
 			this.text.innerHTML =
-				"pour cent, elle représente l'augmentation du PIB dans les économies matures qui découle d'Internet. C'est aujourd'hui un des secteurs qui recrute le plus."
+				"pour cent, cela représente l'augmentation du PIB dans les économies matures qui découle d'Internet. C'est aujourd'hui un des secteurs qui recrute le plus."
 			this.text2.innerHTML =
 				"milliards de dollars d'échanges ont lieu chaque jour au travers du e-commerce. <br> 10% de moins, c'est en moyenne la différence de prix entre un produit acheté en ligne ou dans un magasin physique."
 			this.title.innerHTML = "Internet"
@@ -800,17 +800,17 @@ export default class InPageContainer {
 		this.stopAllSongs()
 		if (this.currentContents === 3) {
 			this.quoteText.innerHTML =
-				"Les deux guerres mondiales ont changé drastiquement la relation entre les hommes et les machines. L’arrivée des chars et des avions, ainsi que les prémices de l’informatique, initièrent ce mouvement. <br> <br>Ces progrès aggravèrent ces conflits et les rendirent meurtriers. Malgré cela, ils permirent aux hommes de profiter de boom économiques et de faciliter leur quotidien."
+				"Les deux guerres mondiales ont changé drastiquement la relation entre les hommes et les machines. L’arrivée des chars et des avions, ainsi que les prémices de l’informatique, initièrent ce mouvement. <br> <br>Ces progrès aggravèrent ces conflits et les rendirent meurtriers. Malgré cela, ils permirent aux hommes de profiter de booms économiques et de faciliter leur quotidien."
 		}
 
 		if (this.currentContents === 6) {
 			this.quoteText.innerHTML =
-				"Après les deux guerres mondiales, les avancées technologiques émises pendant ces conflits arrivèrent dans le domaine civil. <br> <br> Par exemple, les progrès dans le domaine de l’aéronautique facilitèrent les échanges et les déplacements des hommes dans le monde. Cependant, ces progrès créerent plus de problèmes environnementaux, notamment de pollution."
+				"Après les deux guerres mondiales, les avancées technologiques émises pendant ces conflits arrivèrent dans le domaine civil. <br> <br> Par exemple, les progrès dans le domaine de l’aéronautique facilitèrent les échanges et les déplacements des hommes dans le monde. Cependant, ces progrès créèrent plus de problèmes environnementaux, notamment de pollution."
 		}
 
 		if (this.currentContents === 8) {
 			this.quoteText.innerHTML =
-				"L’utilisation des machines (radio, télévision) permis aux médias d’agrandir leur audience et in fine, leur impact. <br> <br> Leur impact économique fut énorme car ces nouveaux supports révolutionnèrent le marketing et la publicité, incitant à la consommation de masse, qui apparut durant les Trente Glorieuses. Malgré cela, ces outils permirent aussi de créer un différent type de propagande, néfaste aux libertés fondamentales de l’Homme."
+				"L’utilisation des machines (radio, télévision) permit aux médias d’agrandir leur audience et in fine, leur impact. <br> <br> Leur impact économique fut énorme car ces nouveaux supports révolutionnèrent le marketing et la publicité, incitant à la consommation de masse, qui apparut durant les Trente Glorieuses. Malgré cela, ces outils permirent aussi de créer un différent type de propagande, néfaste aux libertés fondamentales de l’Homme."
 
 			window.setTimeout(() => {
 				this.animatedNumber2.style.display = "none"
@@ -819,11 +819,11 @@ export default class InPageContainer {
 		}
 		if (this.currentContents === 12) {
 			this.quoteText.innerHTML =
-				"La robotique et l'intelligence artificielle prennent une part de plus en plus conséquente dans les économies aujourd'hui. Cette tendance devrait s’accélérer avec l’arrivée de machines de plus en plus autonomes, intelligentes et interconnectées, les robots. <br><br>Le rôle de l’homme devrait alors se limiter au contrôle, à la surveillance et à la maintenance de ces machines. Mais de nombreuses personnes craignent que celles-ci les remplacent dans le monde du travail."
+				"La robotique et l'intelligence artificielle prennent une part de plus en plus conséquente dans les économies d'aujourd'hui. Cette tendance devrait s’accélérer avec l’arrivée de machines de plus en plus autonomes, intelligentes et interconnectées, les robots. <br><br>Le rôle de l’homme devrait alors se limiter au contrôle, à la surveillance et à la maintenance de ces machines. Mais de nombreuses personnes craignent que celles-ci les remplacent dans le monde du travail."
 		}
 		if (this.currentContents === 13) {
 			this.quoteText.innerHTML =
-				"Au travers des différentes périodes montrées, nous avons pu voir la collaboration entre l’homme et la machine dans les économies. <br><br>Avec l’arrivée de la robotique et de l’intelligence artificielle, le marché du travail se trouvera bouleversé.<br><br>Mais une question reste en suspens. Comment vont s'affirmer ces technologies dans le modèle économique de demain ? Vont-elles tout simplement effacer le travail humain ? Ou au contraire, vont-elles contribuées à l’essor de nouveaux métiers, au détriment d’autres ?"
+				"Au travers des différentes périodes montrées, nous avons pu voir la collaboration entre l’homme et la machine dans les économies. <br><br>Avec l’arrivée de la robotique et de l’intelligence artificielle, le marché du travail se trouvera bouleversé.<br><br>Mais une question reste en suspens. Comment vont s'affirmer ces technologies dans le modèle économique de demain ? Vont-elles tout simplement effacer le travail humain ? Ou au contraire, vont-elles contribuer à l’essor de nouveaux métiers, au détriment d’autres ?"
 			this.menu.style.zIndex = "9"
 			this.menuButton.style.display = "block"
 			this.menuButton.style.zIndex = "10"
